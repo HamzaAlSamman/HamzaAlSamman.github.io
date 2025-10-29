@@ -198,6 +198,10 @@ header .container {
 }
 
 /* ======== 3. قسم "عني" (About) ======== */
+#about {
+  margin-top: 5rem;
+}
+
 .education-item {
   margin-top: 1.5rem;
   padding-right: 1.5rem; /* RTL change */
