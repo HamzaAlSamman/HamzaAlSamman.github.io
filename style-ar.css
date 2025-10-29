@@ -1,13 +1,13 @@
 /* ======== إعدادات عامة ومتغيرات ======== */
 :root {
-  --primary-color: #00aaff; /* لون أساسي (أزرق ساطع) */
-  --secondary-color: #0077cc; /* لون ثانوي */
-  --background-color: #121212; /* خلفية داكنة جداً */
-  --surface-color: #1e1e1e; /* خلفية الكروت (أفتح قليلاً) */
-  --text-color: #e0e0e0; /* لون النص الأساسي */
-  --text-color-secondary: #a0a0a0; /* لون نص باهت */
+  --primary-color: #00aaff;
+  --secondary-color: #0077cc;
+  --background-color: #121212;
+  --surface-color: #1e1e1e;
+  --text-color: #e0e0e0;
+  --text-color-secondary: #a0a0a0;
   --border-color: #333333;
-  --font-family: "Cairo", sans-serif; /* استخدام الخط الذي استوردناه */
+  --font-family: "Cairo", sans-serif;
 }
 
 * {
@@ -17,7 +17,7 @@
 }
 
 html {
-  scroll-behavior: smooth; /* لنقرة ناعمة عند التنقل بين الأقسام */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -25,7 +25,7 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.7;
-  direction: rtl; /* ضمان الاتجاه من اليمين لليسار */
+  direction: rtl; /* RTL direction */
 }
 
 a {
@@ -81,20 +81,18 @@ p {
 
 /* ======== الأقسام (Sections) ======== */
 section {
-  padding: 5rem 0;
+  padding: 8rem 0; /* <-- التعديل الجديد: زيادة الفراغ */
 }
 
 section:nth-child(even) {
-  background-color: var(
-    --surface-color
-  ); /* تلوين الأقسام الزوجية بلون مختلف قليلاً */
+  background-color: var(--surface-color);
 }
 
 /* ======== الأزرار (Buttons) ======== */
 .btn {
   display: inline-block;
   padding: 0.8rem 1.8rem;
-  border-radius: 50px; /* حواف دائرية */
+  border-radius: 50px;
   font-weight: 600;
   transition: all 0.3s ease;
   border: 2px solid transparent;
@@ -125,7 +123,7 @@ section:nth-child(even) {
 header {
   background-color: var(--surface-color);
   padding: 1rem 0;
-  position: fixed; /* تثبيت الشريط في الأعلى */
+  position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
@@ -149,7 +147,7 @@ header .container {
 }
 
 .nav-links li {
-  margin-right: 1.5rem;
+  margin-right: 1.5rem; /* RTL change */
 }
 
 .nav-links a {
@@ -166,7 +164,7 @@ header .container {
 
 /* ======== 2. القسم الرئيسي (Hero) ======== */
 #hero {
-  padding-top: 10rem; /* لإعطاء مساحة تحت الهيدر المثبت */
+  padding-top: 10rem;
   min-height: 80vh;
   display: flex;
   flex-direction: column;
@@ -192,24 +190,31 @@ header .container {
 }
 
 .hero-buttons a {
-  margin-left: 1rem;
+  margin-left: 1rem; /* RTL change */
 }
 .hero-buttons a:first-child {
   margin-right: 1rem;
-  margin-left: 0;
+  margin-left: 0; /* RTL change */
 }
 
 /* ======== 3. قسم "عني" (About) ======== */
 .education-item {
   margin-top: 1.5rem;
-  padding-right: 1.5rem;
-  border-right: 3px solid var(--secondary-color);
+  padding-right: 1.5rem; /* RTL change */
+  border-right: 3px solid var(--secondary-color); /* RTL change */
 }
 
 /* ======== 4. قسم الخبرة (Experience) ======== */
-/* (تم استبدال هذا القسم بأكواد البورتفوليو الجديدة بالأسفل) */
+#experience {
+  margin-top: 3rem; /* <-- التعديل الجديد */
+}
 
 /* ======== 5. قسم المشاريع (Projects) ======== */
+#projects {
+  margin-top: 3rem; /* <-- التعديل الجديد */
+  margin-bottom: 3rem; /* <-- التعديل الجديد */
+}
+
 .project-card {
   background-color: var(--surface-color);
   padding: 2rem;
@@ -245,12 +250,13 @@ header .container {
   border-radius: 5px;
   border: 1px solid var(--border-color);
   display: inline-block;
-  margin-left: 0.5rem;
+  margin-left: 0.5rem; /* RTL change */
 }
 
 /* ======== 7. قسم التواصل (Contact) ======== */
 #contact {
   text-align: center;
+  margin-top: 3rem; /* <-- التعديل الجديد */
 }
 
 .contact-info {
@@ -266,7 +272,7 @@ header .container {
   color: var(--text-color);
 }
 .contact-item i {
-  margin-left: 0.5rem;
+  margin-left: 0.5rem; /* RTL change */
   color: var(--primary-color);
 }
 
@@ -299,8 +305,8 @@ footer {
 .portfolio-category {
   margin-top: 3rem;
   margin-bottom: 1.5rem;
-  border-right: 4px solid var(--primary-color);
-  padding-right: 1rem;
+  border-right: 4px solid var(--primary-color); /* RTL change */
+  padding-right: 1rem; /* RTL change */
 }
 .portfolio-category:first-of-type {
   margin-top: 0;
@@ -360,12 +366,41 @@ footer {
   align-self: flex-start;
 }
 
+/* === التعديل المطلوب: هنا يبدأ === */
 .before-after-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  grid-template-columns: 1fr; /* <-- Solution: 1 column */
+  gap: 3rem; /* <-- Increased gap */
   margin-bottom: 3rem;
 }
+
+/* --- الحل النهائي لشبكة قبل/بعد (عربي) --- */
+
+/* "After" (Banner): عرض كامل وارتفاع تلقائي */
+.ba-item:last-child img {
+  width: 100%;
+  height: auto; /* <-- ارتفاع تلقائي ليناسب البانر */
+  object-fit: cover; /* لملء العرض */
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* "Before" (المنتج): ارتفاع محدود ومحاذاة لليمين */
+.ba-item:first-child img {
+  width: 100%;
+  max-height: 400px; /* يمكنك تعديل هذا الارتفاع */
+  object-fit: contain; /* لعرض المنتج كاملاً */
+
+  /* --- هذا هو السر --- */
+  object-position: right; /* <-- لمحاذاة المنتج لليمين (RTL) */
+  /* ------------------ */
+
+  background-color: #000; /* خلفية سوداء */
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+/* === التعديل المطلوب: هنا ينتهي === */
+
 .ba-item {
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -383,12 +418,6 @@ footer {
 }
 .ba-item:last-child h4 {
   color: #8aff8a;
-}
-.ba-item {
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 1.5rem;
-  background-color: #121212;
 }
 
 .project-card-website {
@@ -416,7 +445,7 @@ footer {
   margin-top: 1rem;
 }
 
-/* أزرار المشروع (ديمو/مباشر) */
+/* Project buttons (Demo/Live) */
 .project-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -432,7 +461,7 @@ footer {
   margin-bottom: 0;
 }
 
-/* زر تبديل اللغة */
+/* Language Switcher Button */
 .lang-btn {
   background-color: var(--primary-color);
   color: #ffffff !important;
@@ -446,7 +475,7 @@ footer {
   color: #ffffff !important;
 }
 
-/* ======== التجاوب (Responsive Design) ======== */
+/* ======== Responsive Design ======== */
 @media (max-width: 768px) {
   .container {
     padding: 0 1rem;
@@ -459,7 +488,7 @@ footer {
     background-color: var(--surface-color);
     position: absolute;
     top: 65px;
-    right: 0;
+    right: 0; /* RTL change */
     padding: 1rem 0;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   }
@@ -516,7 +545,7 @@ footer {
     align-items: center;
   }
 
-  /* تجاوب البورتفوليو */
+  /* Portfolio responsive */
   .projects-grid {
     grid-template-columns: 1fr;
   }
